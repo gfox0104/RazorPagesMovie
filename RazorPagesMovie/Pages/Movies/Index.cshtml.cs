@@ -47,9 +47,8 @@ namespace RazorPagesMovie.Pages.Movies
             {
                 movies = movies.Where(s => s.Genre.Contains(MovieGenre));
             }
-            Console.WriteLine(genreQuery);
             Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
-            Console.WriteLine(Genres);
+            
             Movie = await movies.ToListAsync();
         }
     }
